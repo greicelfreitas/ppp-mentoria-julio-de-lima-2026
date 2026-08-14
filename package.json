@@ -1,0 +1,37 @@
+{
+  "name": "ppp-mentoria-julio-de-lima-2026",
+  "version": "1.0.0",
+  "description": "API REST para cadastro e identificação de espécies de peixes",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "test": "node --test test/api.test.js",
+    "cypress:run": "cypress run",
+    "test:e2e": "start-server-and-test start http://127.0.0.1:3000/api/fish cypress:run",
+    "test:e2e:open": "cypress open",
+    "audit": "npm audit --omit=dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greicelfreitas/ppp-mentoria-julio-de-lima-2026.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "express": "^5.1.0",
+    "swagger-ui-express": "^5.0.1",
+    "yaml": "^2.7.1"
+  },
+  "devDependencies": {
+    "cypress": "15.4.0",
+    "start-server-and-test": "^2.0.8"
+  },
+  "bugs": {
+    "url": "https://github.com/greicelfreitas/ppp-mentoria-julio-de-lima-2026/issues"
+  },
+  "homepage": "https://github.com/greicelfreitas/ppp-mentoria-julio-de-lima-2026#readme"
+}

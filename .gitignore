@@ -141,3 +141,19 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+# Dependências e artefatos locais
+node_modules/
+npm-debug.log*
+
+# Configurações locais e segredos
+.env
+.env.*
+!.env.example
+
+# Uploads temporários e cobertura de testes
+uploads/
+coverage/
+
+# Evidências locais do Cypress
+cypress/screenshots/
+cypress/videos/

@@ -19,7 +19,7 @@ Os cenários são descritos em Gherkin, em português, na pasta `features`. A au
 
 ## Ferramentas e abordagem
 
-São utilizados Node Test Runner, `fetch`, Ajv, JSON Schema, Swagger/OpenAPI, Postman e GitHub Actions. O ciclo consiste em planejar, executar `npm test`, registrar o resultado em `execucao-testes.md`, registrar defeitos em `bugs.md`, corrigir, retestar e encerrar.
+São utilizados Node Test Runner, `fetch`, Ajv, JSON Schema, Swagger/OpenAPI, Postman e GitHub Actions. O ciclo consiste em planejar, executar `npm test`, registrar o resultado em `execucao-testes.md`, registrar defeitos em `registro-bugs.md`, corrigir, retestar e encerrar.
 
 As evidências são a saída do terminal e o relatório JUnit em `reports/node-tests.xml`.
 

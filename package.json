@@ -13,6 +13,8 @@
     "test:graphql": "node --test tests/graphql.test.js",
     "test:report": "node --test --test-reporter=junit --test-reporter-destination=reports/node-tests.xml tests/api.test.js tests/unit.test.js tests/schemas.test.js tests/graphql.test.js tests/e2e.test.js",
     "test:e2e": "node --test tests/e2e.test.js",
+    "test:defects": "node --test tests/defeitos-conhecidos.test.js",
+    "test:defects:report": "node --test --test-reporter=junit --test-reporter-destination=reports/defeitos-conhecidos.xml tests/defeitos-conhecidos.test.js",
     "audit": "npm audit --omit=dev"
   },
   "repository": {

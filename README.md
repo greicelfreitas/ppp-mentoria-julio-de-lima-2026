@@ -38,7 +38,7 @@ Os testes E2E exercitam o fluxo completo de uma espécie — cadastro, consulta,
 │   ├── cenarios-testes.md
 │   ├── rastreabilidade.md
 │   ├── execucao-testes.md
-│   └── bugs.md
+│   └── registro-bugs.md
 ├── features/           # cenários de teste escritos em Gherkin
 ├── postman/            # coleção e ambiente Postman
 ├── resources/          # especificação Swagger/OpenAPI
@@ -140,7 +140,7 @@ A documentação do projeto está organizada da seguinte forma:
 * [Cenários de testes](docs/cenarios-testes.md): cenários funcionais, exploratórios e exemplos GraphQL.
 * [Rastreabilidade](docs/rastreabilidade.md): relação entre regras, cenários e automação.
 * [Execução dos testes](docs/execucao-testes.md): resultados dos ciclos executados.
-* [Bugs](docs/bugs.md): defeitos, status e evidências.
+* [Registro de bugs](docs/registro-bugs.md): defeitos, status e evidências.
 
 Os cenários em Gherkin permanecem em [features](features). A pipeline executa `npm test` em pushes e pull requests para a branch `master`.
 

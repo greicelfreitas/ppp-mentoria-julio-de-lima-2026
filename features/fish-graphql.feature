@@ -1,4 +1,3 @@
-# language: pt
 Funcionalidade: API GraphQL de espécies de peixes
   Para selecionar os dados necessários das espécies
   Como consumidor da API

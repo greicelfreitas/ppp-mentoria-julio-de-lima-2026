@@ -1,4 +1,3 @@
-# language: pt
 Funcionalidade: Contrato de cadastro de espécies
   Para impedir dados inválidos na API
   Como equipe de qualidade

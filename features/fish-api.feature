@@ -1,4 +1,3 @@
-# language: pt
 Funcionalidade: API REST de espécies de peixes
   Para consultar e manter informações de espécies
   Como consumidor da API

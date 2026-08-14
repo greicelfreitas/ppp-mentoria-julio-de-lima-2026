@@ -1,4 +1,3 @@
-# language: pt
 Funcionalidade: Regras de negócio das espécies de peixes
   Para manter o comportamento da API consistente
   Como equipe de qualidade

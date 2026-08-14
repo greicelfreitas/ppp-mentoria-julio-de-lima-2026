@@ -1,4 +1,3 @@
-# language: pt
 Funcionalidade: Fluxo completo de espécies de peixes
   Para garantir o funcionamento integrado da API
   Como equipe de qualidade

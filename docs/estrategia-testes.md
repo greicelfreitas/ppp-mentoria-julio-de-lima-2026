@@ -10,7 +10,7 @@ São cobertos os serviços, endpoints REST, operações GraphQL, validação do 
 
 * Unitários: regras da camada de serviço.
 * Integração/API: rotas REST, status HTTP e respostas.
-* Contrato: dados de cadastro validados com Ajv e JSON Schema.
+* Schema: dados de cadastro validados com Ajv e JSON Schema.
 * GraphQL: queries, mutation e acesso ao endpoint HTTP.
 * E2E: fluxo de cadastro, consulta, identificação e erros, executado exclusivamente com Node Test Runner.
 * Exploratórios: validações de entrada e comportamento de erro.
@@ -19,7 +19,7 @@ Os cenários são descritos em Gherkin, em português, na pasta `features`. A au
 
 ## Ferramentas e abordagem
 
-São utilizados Node Test Runner, `fetch`, Ajv, JSON Schema, Swagger/OpenAPI, Postman e GitHub Actions. O ciclo consiste em planejar, executar `npm test`, registrar o resultado em `execucao-testes.md`, registrar defeitos em `registro-bugs.md`, corrigir, retestar e encerrar.
+São utilizados Node Test Runner, `fetch`, Ajv, JSON Schema, Swagger/OpenAPI, Postman e GitHub Actions. O ciclo consiste em planejar, executar `npm test`, registrar o resultado em `execucao-testes.md`, registrar defeitos em `bugs.md`, corrigir, retestar e encerrar.
 
 As evidências são a saída do terminal e o relatório JUnit em `reports/node-tests.xml`.
 

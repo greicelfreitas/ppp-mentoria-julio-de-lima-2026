@@ -34,15 +34,15 @@ Os testes E2E exercitam o fluxo completo de uma espécie — cadastro, consulta,
 ├── .github/workflows/  # integração contínua
 ├── docs/
 │   ├── regras-negocio.md
-│   ├── plano-de-testes.md
+│   ├── estrategia-testes.md
 │   ├── cenarios-testes.md
 │   ├── rastreabilidade.md
 │   ├── execucao-testes.md
-│   └── registro-bugs.md
+│   └── bugs.md
 ├── features/           # cenários de teste escritos em Gherkin
 ├── postman/            # coleção e ambiente Postman
 ├── resources/          # especificação Swagger/OpenAPI
-├── schemas/            # contrato JSON Schema
+├── schemas/            # arquivo JSON Schema
 ├── src/
 │   ├── controllers/    # respostas HTTP da API REST
 │   ├── graphql/        # schema, queries e mutations GraphQL
@@ -122,7 +122,7 @@ Para executar cada nível isoladamente:
 ```bash
 npm run test:unit
 npm run test:integration
-npm run test:schemas
+npm run test:schema
 npm run test:graphql
 npm run test:e2e
 ```
@@ -136,11 +136,11 @@ npm run test:report
 A documentação do projeto está organizada da seguinte forma:
 
 * [Regras de negócio](docs/regras-negocio.md): regras e comportamento esperado da API.
-* [Plano de testes](docs/plano-de-testes.md): abordagem de qualidade e tipos de teste.
+* [Estratégia de testes](docs/estrategia-testes.md): abordagem de qualidade e tipos de teste.
 * [Cenários de testes](docs/cenarios-testes.md): cenários funcionais, exploratórios e exemplos GraphQL.
 * [Rastreabilidade](docs/rastreabilidade.md): relação entre regras, cenários e automação.
 * [Execução dos testes](docs/execucao-testes.md): resultados dos ciclos executados.
-* [Registro de bugs](docs/registro-bugs.md): defeitos, status e evidências.
+* [Bugs](docs/bugs.md): defeitos, status e evidências.
 
 Os cenários em Gherkin permanecem em [features](features). A pipeline executa `npm test` em pushes e pull requests para a branch `master`.
 
@@ -161,8 +161,6 @@ Os cenários em Gherkin permanecem em [features](features). A pipeline executa `
 2. Busca uma espécie inexistente.
 3. Envia um cadastro incompleto.
 
-Os testes usam uma massa exclusiva em um servidor temporário, sem depender de serviços externos ou interface gráfica. Os dados da API são armazenados em memória e reinicializados ao reiniciar o servidor.
-
-## Projeto em evolução
-1. Inserir envio de imagens para reconhecimento da espécie.
+# Proejto em evolução
+1. Inserir envio de imagens para reconhecimento da espécie;
 2. Implementação de mais cenários de testes.

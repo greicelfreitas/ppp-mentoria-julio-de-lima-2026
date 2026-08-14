@@ -2,17 +2,17 @@
 
 Os cenários funcionais estão escritos em Gherkin, em português, na pasta [features](../features):
 
-* `fish-service.feature`: regras do serviço, CT001 a CT006.
-* `fish-api.feature`: endpoints REST e erros, CT007 a CT014.
-* `fish-schemas.feature`: validação do JSON Schema, CT015 a CT021.
-* `fish-e2e.feature`: fluxo completo, CT022 a CT028.
-* `fish-graphql.feature`: queries e mutation GraphQL.
+* `fish-service.feature`: regras do serviço, CT001 e CT002.
+* `fish-api.feature`: endpoints REST e erros, CT003 e CT004.
+* `fish-schemas.feature`: validação do JSON Schema, CT005 e CT006.
+* `fish-graphql.feature`: queries e mutation GraphQL, CT007 e CT008.
+* `fish-e2e.feature`: fluxos positivo e negativo, CT009 e CT010.
 
 Os fluxos positivos cobrem cadastro, consulta, identificação e listagem. Os fluxos negativos e de erro cobrem duplicidade, recurso inexistente, campos ausentes, dados inválidos, JSON inválido e Content-Type não suportado.
 
 ## Testes exploratórios
 
-A sessão ET01 explora as validações de cadastro com espaços, lista vazia, campo adicional, JSON inválido e Content-Type incorreto. O comportamento esperado é retornar erros padronizados, sem resposta 500. Esses cenários foram automatizados nos casos CT013 a CT021 e nenhum defeito funcional foi confirmado.
+A sessão ET01 explora as validações de cadastro com espaços, lista vazia, campo adicional, JSON inválido e Content-Type incorreto. O comportamento esperado é retornar erros padronizados, sem resposta 500. As principais validações foram agrupadas nos casos CT004 e CT006.
 
 ## Modelos GraphQL
 

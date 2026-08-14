@@ -2,7 +2,7 @@
 
 Este repositório contém uma API REST e GraphQL para cadastrar, identificar e consultar espécies de peixes. A aplicação tem escopo propositalmente simples: não possui banco de dados, autenticação ou frontend.
 
-O foco principal do projeto está em qualidade de software, testes automatizados e CI/CD, incluindo validação de contrato, rastreabilidade e documentação dos testes como parte do Projeto Final de Portfólio da Mentoria Julio de Lima.
+O foco principal do projeto está em qualidade de software, testes automatizados e CI/CD, incluindo validação por JSON Schema, rastreabilidade e documentação dos testes como parte do Projeto Final de Portfólio da Mentoria Julio de Lima.
 
 Os testes E2E exercitam o fluxo completo de uma espécie — cadastro, consulta, identificação e cenários de erro — utilizando apenas a API local e o executor nativo do Node.js.
 
@@ -165,3 +165,4 @@ Os testes usam uma massa exclusiva em um servidor temporário, sem depender de s
 
 ## Projeto em evolução
 1. Inserir envio de imagens para reconhecimento da espécie.
+2. Implementação de mais cenários de testes.

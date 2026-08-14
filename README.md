@@ -41,7 +41,7 @@ Os testes E2E exercitam o fluxo completo de uma espécie — cadastro, consulta,
 │   └── bugs.md
 ├── features/           # cenários de teste escritos em Gherkin
 ├── postman/            # coleção e ambiente Postman
-├── resources/          # especificação Swagger/OpenAPI
+├── resources/          # especificação Swagger
 ├── schemas/            # arquivo JSON Schema
 ├── src/
 │   ├── controllers/    # respostas HTTP da API REST
@@ -161,6 +161,6 @@ Os cenários em Gherkin permanecem em [features](features). A pipeline executa `
 2. Busca uma espécie inexistente.
 3. Envia um cadastro incompleto.
 
-# Proejto em evolução
-1. Inserir envio de imagens para reconhecimento da espécie;
-2. Implementação de mais cenários de testes.
+# Próximas evoluções
+1. Implementar o envio de imagens para reconhecimento da espécie;
+2. Ampliar os cenários de teste conforme novas funcionalidades forem adicionadas.

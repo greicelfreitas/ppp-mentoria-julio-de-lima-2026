@@ -4,6 +4,10 @@ Funcionalidade: API GraphQL de espécies de peixes
   Como consumidor da API
   Quero consultar e cadastrar espécies pelo GraphQL
 
+  Cenário: Abrir a interface GraphQL
+    Quando eu acessar o endpoint GraphQL pelo navegador
+    Então a interface para executar operações deve ser exibida
+
   Cenário: Listar as espécies cadastradas
     Quando eu executar a query "fishes"
     Então a resposta não deve conter erros

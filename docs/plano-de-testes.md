@@ -12,7 +12,7 @@ São cobertos os serviços, endpoints REST, operações GraphQL, validação do 
 * Integração/API: rotas REST, status HTTP e respostas.
 * Contrato: dados de cadastro validados com Ajv e JSON Schema.
 * GraphQL: queries, mutation e acesso ao endpoint HTTP.
-* E2E: fluxo de cadastro, consulta, identificação e erros.
+* E2E: fluxo de cadastro, consulta, identificação e erros, executado exclusivamente com Node Test Runner.
 * Exploratórios: validações de entrada e comportamento de erro.
 
 Os cenários são descritos em Gherkin, em português, na pasta `features`. A automação correspondente fica em `tests`.

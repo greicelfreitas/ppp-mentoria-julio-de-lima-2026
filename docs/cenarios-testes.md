@@ -4,7 +4,7 @@ Os cenários funcionais estão escritos em Gherkin, em português, na pasta [fea
 
 * `fish-service.feature`: regras do serviço, CT001 a CT006.
 * `fish-api.feature`: endpoints REST e erros, CT007 a CT014.
-* `fish-contract.feature`: contrato JSON Schema, CT015 a CT021.
+* `fish-schemas.feature`: validação do JSON Schema, CT015 a CT021.
 * `fish-e2e.feature`: fluxo completo, CT022 a CT028.
 * `fish-graphql.feature`: queries e mutation GraphQL.
 

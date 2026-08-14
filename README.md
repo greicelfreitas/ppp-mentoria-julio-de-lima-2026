@@ -34,7 +34,7 @@ Os testes E2E exercitam o fluxo completo de uma espécie — cadastro, consulta,
 ├── .github/workflows/  # integração contínua
 ├── docs/
 │   ├── regras-negocio.md
-│   ├── estrategia-testes.md
+│   ├── plano-de-testes.md
 │   ├── cenarios-testes.md
 │   ├── rastreabilidade.md
 │   ├── execucao-testes.md
@@ -122,7 +122,7 @@ Para executar cada nível isoladamente:
 ```bash
 npm run test:unit
 npm run test:integration
-npm run test:contract
+npm run test:schemas
 npm run test:graphql
 npm run test:e2e
 ```
@@ -136,7 +136,7 @@ npm run test:report
 A documentação do projeto está organizada da seguinte forma:
 
 * [Regras de negócio](docs/regras-negocio.md): regras e comportamento esperado da API.
-* [Estratégia de testes](docs/estrategia-testes.md): abordagem de qualidade e tipos de teste.
+* [Plano de testes](docs/plano-de-testes.md): abordagem de qualidade e tipos de teste.
 * [Cenários de testes](docs/cenarios-testes.md): cenários funcionais, exploratórios e exemplos GraphQL.
 * [Rastreabilidade](docs/rastreabilidade.md): relação entre regras, cenários e automação.
 * [Execução dos testes](docs/execucao-testes.md): resultados dos ciclos executados.

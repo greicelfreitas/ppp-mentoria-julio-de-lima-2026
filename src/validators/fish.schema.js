@@ -1,5 +1,5 @@
 const Ajv = require('ajv');
-const fishSchema = require('../../contracts/fish.schema.json');
+const fishSchema = require('../../schemas/fish.schema.json');
 
 const ajv = new Ajv({ allErrors: true });
 const validateFish = ajv.compile(fishSchema);

@@ -1,5 +1,5 @@
 const fishService = require('../services/fish.service');
-const { validateCreateFish } = require('../validation/fish.schema');
+const { validateCreateFish } = require('../validators/fish.schema');
 
 function success(res, status, data) {
   return res.status(status).json({ success: true, data });

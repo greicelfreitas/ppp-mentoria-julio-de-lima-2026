@@ -9,7 +9,7 @@ const {
   GraphQLString
 } = require('graphql');
 const fishService = require('../services/fish.service');
-const { validateCreateFish } = require('../validation/fish.schema');
+const { validateCreateFish } = require('../validators/fish.schema');
 
 const FishType = new GraphQLObjectType({
   name: 'Fish',

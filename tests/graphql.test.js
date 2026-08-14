@@ -23,6 +23,18 @@ async function graphql(query, variables) {
   return { response, body: await response.json() };
 }
 
+test('GraphQL exibe a interface ao abrir a rota no navegador', async () => {
+  const response = await fetch(`${baseUrl}/graphql`, {
+    headers: { accept: 'text/html' }
+  });
+  const html = await response.text();
+
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get('content-type'), /text\/html/);
+  assert.match(html, /API GraphQL de Espécies de Peixes/);
+  assert.match(html, /Executar/);
+});
+
 test('GraphQL lista as espécies cadastradas', async () => {
   const { response, body } = await graphql('{ fishes { id commonName scientificName } }');
   assert.equal(response.status, 200);

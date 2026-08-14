@@ -6,12 +6,14 @@ const YAML = require('yaml');
 const { createHandler } = require('graphql-http/lib/use/express');
 const fishRoutes = require('./routes/fish.routes');
 const graphqlSchema = require('./graphql/schema');
+const { showPlayground } = require('./graphql/playground');
 
 const app = express();
 const swaggerDocument = YAML.parse(fs.readFileSync(path.join(__dirname, '../resources/swagger.yaml'), 'utf8'));
 
 app.use(express.json());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.get('/graphql', showPlayground);
 app.all('/graphql', createHandler({ schema: graphqlSchema }));
 app.use('/api/fish', (req, res, next) => {
   if (req.method === 'POST' && !req.is('application/json')) {

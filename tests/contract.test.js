@@ -1,6 +1,6 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { validateCreateFish } = require('../src/validation/fish.schema');
+const { validateCreateFish } = require('../src/validators/fish.schema');
 
 const valid = { commonName: 'Pirarucu', scientificName: 'Arapaima gigas', regions: ['Bacia Amazônica'], description: 'Peixe de água doce.' };
 test('CT015 contrato: aceita payload válido', () => assert.equal(validateCreateFish(valid).valid, true));

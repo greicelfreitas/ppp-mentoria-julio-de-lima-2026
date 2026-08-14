@@ -32,18 +32,25 @@ Os testes E2E exercitam o fluxo completo de uma espécie — cadastro, consulta,
 ```text
 .
 ├── .github/workflows/  # integração contínua
-├── docs/               # estratégia e registros de testes
+├── docs/
+│   ├── regras-negocio.md
+│   ├── estrategia-testes.md
+│   ├── cenarios-testes.md
+│   ├── rastreabilidade.md
+│   ├── execucao-testes.md
+│   └── bugs.md
 ├── features/           # cenários de teste escritos em Gherkin
 ├── postman/            # coleção e ambiente Postman
 ├── resources/          # especificação Swagger/OpenAPI
+├── schemas/            # contrato JSON Schema
 ├── src/
 │   ├── controllers/    # respostas HTTP da API REST
 │   ├── graphql/        # schema, queries e mutations GraphQL
 │   ├── models/         # dados em memória
 │   ├── routes/         # endpoints REST
 │   ├── services/       # regras de negócio compartilhadas
-│   └── validation/     # validação dos dados de entrada
-└── test/               # testes automatizados com Node.js
+│   └── validators/     # validação dos dados de entrada
+└── tests/              # testes automatizados com Node.js
 ```
 
 ---
@@ -98,12 +105,7 @@ O endpoint GraphQL está disponível em:
 http://localhost:3000/graphql
 ```
 
-| Tipo | Operação | Finalidade |
-| --- | --- | --- |
-| Query | `fishes` | Lista todas as espécies. |
-| Query | `fish(id: ID!)` | Consulta uma espécie por ID. |
-| Query | `identifyFish(scientificName: String!)` | Identifica uma espécie pelo nome científico. |
-| Mutation | `createFish(input: FishInput!)` | Cadastra uma espécie. |
+Os modelos de consultas e mutation estão em [docs/cenarios-testes.md](docs/cenarios-testes.md).
 
 ---
 
@@ -131,7 +133,16 @@ Para gerar a evidência JUnit:
 npm run test:report
 ```
 
-A estratégia, os casos em Gherkin e o registro das execuções estão disponíveis em [docs/TEST_STRATEGY.md](docs/TEST_STRATEGY.md), [features](features) e [docs/TEST_EXECUTION.md](docs/TEST_EXECUTION.md). A pipeline executa `npm test` em pushes e pull requests para a branch `master`.
+A documentação do projeto está organizada da seguinte forma:
+
+* [Regras de negócio](docs/regras-negocio.md): regras e comportamento esperado da API.
+* [Estratégia de testes](docs/estrategia-testes.md): abordagem de qualidade e tipos de teste.
+* [Cenários de testes](docs/cenarios-testes.md): cenários funcionais, exploratórios e exemplos GraphQL.
+* [Rastreabilidade](docs/rastreabilidade.md): relação entre regras, cenários e automação.
+* [Execução dos testes](docs/execucao-testes.md): resultados dos ciclos executados.
+* [Bugs](docs/bugs.md): defeitos, status e evidências.
+
+Os cenários em Gherkin permanecem em [features](features). A pipeline executa `npm test` em pushes e pull requests para a branch `master`.
 
 ---
 

@@ -162,3 +162,6 @@ Os cenários em Gherkin permanecem em [features](features). A pipeline executa `
 3. Envia um cadastro incompleto.
 
 Os testes usam uma massa exclusiva em um servidor temporário, sem depender de serviços externos ou interface gráfica. Os dados da API são armazenados em memória e reinicializados ao reiniciar o servidor.
+
+## Projeto em evolução
+1. Inserir envio de imagens para reconhecimento da espécie.

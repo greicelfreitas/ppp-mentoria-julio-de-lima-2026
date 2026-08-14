@@ -1,5 +1,25 @@
 # Estratégia de testes
 
-Objetivo: demonstrar QA sobre a API, mantida propositalmente simples. Escopo: cadastro, consulta, identificação, validação e envelopes HTTP. Fora de escopo: IA real, persistência, autenticação e upload de imagem. Ambiente: Node 20, API local e GitHub Actions.
+## Objetivo
 
-Abordagem: testes unitários para serviço, integração/API com servidor Express real, contrato com Ajv/JSON Schema e E2E HTTP com Node Test Runner. Entrada: dependências instaladas e contrato atualizado. Saída: testes obrigatórios aprovados, Swagger coerente e auditoria de produção sem vulnerabilidades.
+Verificar as regras de cadastro, consulta e identificação de espécies e dar confiança para alterações na aplicação. O projeto possui escopo propositalmente simples e prioriza qualidade de software, testes automatizados e CI/CD.
+
+## Escopo
+
+São cobertos os serviços, endpoints REST, operações GraphQL, validação do JSON Schema, respostas de sucesso e erro e o fluxo completo da API. Banco de dados, autenticação, frontend e testes de performance não fazem parte do escopo.
+
+## Tipos de testes
+
+* Unitários: validam as regras da camada de serviço.
+* Integração/API: validam rotas REST, status HTTP e respostas.
+* Contrato: validam os dados de cadastro com Ajv e JSON Schema.
+* GraphQL: validam queries e mutation pelo endpoint HTTP.
+* E2E: validam o fluxo de cadastro, consulta, identificação e erros.
+
+## Ferramentas
+
+São utilizados Node Test Runner, `fetch`, Ajv, JSON Schema, Swagger/OpenAPI, Postman e GitHub Actions.
+
+## Execução na pipeline
+
+Em pushes e pull requests para a branch `master`, o GitHub Actions instala as dependências com `npm ci`, executa `npm test`, gera o relatório JUnit, realiza a auditoria das dependências de produção e publica o relatório como artefato.

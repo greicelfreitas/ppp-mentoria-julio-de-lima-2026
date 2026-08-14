@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
 
 jobs:
   quality:
@@ -19,16 +19,10 @@ jobs:
           cache: npm
       - name: Instalar dependências
         run: npm ci
-      - name: Testes unitários
-        run: npm run test:unit
-      - name: Testes de integração/API
-        run: npm run test:integration
-      - name: Testes de contrato
-        run: npm run test:contract
-      - name: Relatório JUnit
+      - name: Executar testes automatizados
+        run: npm test
+      - name: Gerar relatório JUnit
         run: npm run test:report
-      - name: Testes E2E
-        run: npm run test:e2e
       - name: Verificar vulnerabilidades de produção
         run: npm run audit
       - name: Publicar relatório

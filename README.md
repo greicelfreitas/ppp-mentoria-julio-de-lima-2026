@@ -1,8 +1,8 @@
 # API de Espécies de Peixes
 
-Este repositório contém uma API REST e GraphQL para cadastrar, identificar e consultar espécies de peixes. O projeto inclui testes automatizados com Node Test Runner e documentação Swagger para os endpoints REST.
+Este repositório contém uma API REST e GraphQL para cadastrar, identificar e consultar espécies de peixes. A aplicação tem escopo propositalmente simples: não possui banco de dados, autenticação ou frontend.
 
-O projeto foi mantido simples propositalmente: o foco é demonstrar levantamento de regras, estratégia, automação, rastreabilidade e ciclo de testes de Qualidade de Software como parte do Projeto Final de Portifólio da Mentoria Julio de Lima.
+O foco principal do projeto está em qualidade de software, testes automatizados e CI/CD, incluindo validação de contrato, rastreabilidade e documentação dos testes como parte do Projeto Final de Portfólio da Mentoria Julio de Lima.
 
 Os testes E2E exercitam o fluxo completo de uma espécie — cadastro, consulta, identificação e cenários de erro — utilizando apenas a API local e o executor nativo do Node.js.
 
@@ -32,6 +32,7 @@ Os testes E2E exercitam o fluxo completo de uma espécie — cadastro, consulta,
 ```text
 .
 ├── .github/workflows/  # integração contínua
+├── docs/               # estratégia e registros de testes
 ├── postman/            # coleção e ambiente Postman
 ├── resources/          # especificação Swagger/OpenAPI
 ├── src/
@@ -128,6 +129,8 @@ Para gerar a evidência JUnit:
 ```bash
 npm run test:report
 ```
+
+A estratégia e o registro das execuções estão documentados em [docs/TEST_STRATEGY.md](docs/TEST_STRATEGY.md) e [docs/TEST_EXECUTION.md](docs/TEST_EXECUTION.md). A pipeline executa `npm test` em pushes e pull requests para a branch `master`.
 
 ---
 

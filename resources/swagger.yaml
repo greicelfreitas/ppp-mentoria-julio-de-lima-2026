@@ -87,6 +87,7 @@ components:
   schemas:
     CreateFishRequest:
       type: object
+      additionalProperties: false
       required: [commonName, scientificName, regions]
       properties:
         commonName: { type: string, minLength: 1, maxLength: 120, pattern: '\\S', example: Tilápia-do-Nilo }

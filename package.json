@@ -6,10 +6,12 @@
   "scripts": {
     "dev": "node --watch src/server.js",
     "start": "node src/server.js",
-    "test": "node --test test/api.test.js",
-    "cypress:run": "cypress run",
-    "test:e2e": "start-server-and-test start http://127.0.0.1:3000/api/fish cypress:run",
-    "test:e2e:open": "cypress open",
+    "test": "node --test test/api.test.js test/unit.test.js test/contract.test.js test/e2e.test.js",
+    "test:unit": "node --test test/unit.test.js",
+    "test:integration": "node --test test/api.test.js",
+    "test:contract": "node --test test/contract.test.js",
+    "test:report": "node --test --test-reporter=junit --test-reporter-destination=reports/node-tests.xml test/api.test.js test/unit.test.js test/contract.test.js",
+    "test:e2e": "node --test test/e2e.test.js",
     "audit": "npm audit --omit=dev"
   },
   "repository": {
@@ -27,8 +29,6 @@
     "yaml": "^2.7.1"
   },
   "devDependencies": {
-    "cypress": "15.4.0",
-    "start-server-and-test": "^2.0.8"
   },
   "bugs": {
     "url": "https://github.com/greicelfreitas/ppp-mentoria-julio-de-lima-2026/issues"

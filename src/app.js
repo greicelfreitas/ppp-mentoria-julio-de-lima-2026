@@ -10,6 +10,12 @@ const swaggerDocument = YAML.parse(fs.readFileSync(path.join(__dirname, '../reso
 
 app.use(express.json());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api/fish', (req, res, next) => {
+  if (req.method === 'POST' && !req.is('application/json')) {
+    return res.status(415).json({ success: false, error: { code: 'UNSUPPORTED_MEDIA_TYPE', message: 'Use Content-Type application/json.' } });
+  }
+  return next();
+});
 app.use('/api/fish', fishRoutes);
 app.use((err, req, res, next) => {
   if (err instanceof SyntaxError && err.status === 400) {

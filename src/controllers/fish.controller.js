@@ -14,6 +14,9 @@ function getAll(req, res) {
 }
 
 function getById(req, res) {
+  if (!/^\d+$/.test(req.params.id) || Number(req.params.id) < 1) {
+    return error(res, 400, 'INVALID_ID', 'O identificador deve ser um número inteiro positivo.');
+  }
   const fish = fishService.findFish(req.params.id);
   if (!fish) return error(res, 404, 'SPECIES_NOT_FOUND', 'Espécie não encontrada.');
   return success(res, 200, fish);
@@ -21,8 +24,11 @@ function getById(req, res) {
 
 function identify(req, res) {
   const { scientificName } = req.query;
-  if (!scientificName?.trim()) {
+  if (typeof scientificName !== 'string' || !scientificName.trim()) {
     return error(res, 400, 'SCIENTIFIC_NAME_REQUIRED', 'Informe o parâmetro scientificName.');
+  }
+  if (!/^[A-Z][a-z]+\s[a-z]+(?:\s[a-z]+)?$/.test(scientificName.trim())) {
+    return error(res, 400, 'INVALID_SCIENTIFIC_NAME', 'Informe um nome científico no formato Gênero espécie.');
   }
   const fish = fishService.identifyByScientificName(scientificName);
   if (!fish) {

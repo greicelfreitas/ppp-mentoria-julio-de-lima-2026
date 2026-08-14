@@ -1,8 +1,10 @@
 # 🐟 API de Espécies de Peixes
 
-Este repositório contém uma API REST para cadastrar, identificar e consultar espécies de peixes. O projeto inclui testes automatizados de API com Cypress, validação de contrato por JSON Schema e documentação Swagger.
+Este repositório contém uma API REST para cadastrar, identificar e consultar espécies de peixes. O projeto inclui testes automatizados de API com Node Test Runner, validação de contrato por JSON Schema e documentação Swagger.
 
-Os testes E2E exercitam o fluxo completo de uma espécie — cadastro, consulta, identificação e cenários de erro — utilizando apenas a API local.
+> A API foi mantida simples propositalmente: o foco deste repositório é demonstrar levantamento de regras, estratégia, automação, rastreabilidade e ciclo de testes de Qualidade de Software.
+
+Os testes E2E exercitam o fluxo completo de uma espécie — cadastro, consulta, identificação e cenários de erro — utilizando apenas a API local e o executor nativo do Node.js.
 
 ---
 
@@ -10,7 +12,7 @@ Os testes E2E exercitam o fluxo completo de uma espécie — cadastro, consulta,
 
 * [Node.js](https://nodejs.org/): ambiente de execução.
 * [Express](https://expressjs.com/): framework da API REST.
-* [Cypress](https://www.cypress.io/): testes End-to-End de API.
+* Node Test Runner: testes End-to-End de API.
 * [Ajv](https://ajv.js.org/): validação do contrato JSON Schema.
 * [Swagger UI](https://swagger.io/tools/swagger-ui/): documentação interativa OpenAPI.
 
@@ -29,7 +31,6 @@ Os testes E2E exercitam o fluxo completo de uma espécie — cadastro, consulta,
 .
 ├── .github/workflows/  # integração contínua
 ├── contracts/          # contrato JSON Schema
-├── cypress/e2e/        # testes E2E de API
 ├── postman/            # coleção e ambiente Postman
 ├── resources/          # especificação Swagger/OpenAPI
 ├── src/
@@ -107,21 +108,16 @@ curl -X POST http://localhost:3000/api/fish \
 npm test
 ```
 
-## Testes E2E de API — modo headless
+Para executar cada nível isoladamente: `npm run test:unit`, `npm run test:integration` e `npm run test:contract`. Para gerar evidência JUnit: `npm run test:report`.
 
-O comando inicia a API, aguarda sua disponibilidade e executa os cenários Cypress:
+## Testes E2E de API
+
+O comando inicia a API em uma porta temporária e executa os cenários completos:
 
 ```bash
 npm run test:e2e
 ```
 
-## Testes E2E de API — modo interativo
-
-Em outro terminal, inicie a API com `npm start`. Depois, execute:
-
-```bash
-npm run test:e2e:open
-```
 
 ---
 
@@ -140,7 +136,7 @@ npm run test:e2e:open
 2. Busca uma espécie inexistente e valida `404` e `FISH_NOT_IDENTIFIED`.
 3. Envia um cadastro incompleto e valida `400` e `INVALID_SPECIES_DATA`.
 
-Os testes usam um nome científico único com `Date.now()` para evitar colisões e usam `failOnStatusCode: false` somente nos cenários em que respostas de erro são esperadas.
+Os testes usam uma massa exclusiva em um servidor temporário, sem depender de serviços externos ou interface gráfica.
 
 ---
 
@@ -150,6 +146,7 @@ Os testes usam um nome científico único com `Date.now()` para evitar colisões
 * A coleção e o ambiente Postman estão em [postman](postman).
 * As regras de negócio estão em [DECISION_TABLE.md](DECISION_TABLE.md).
 * O workflow de CI está em [.github/workflows/ci.yml](.github/workflows/ci.yml).
+* A documentação de QA está em [docs](docs): regras, estratégia, plano, casos, matriz, execução, defeitos e exploração.
 
 Os dados da API são armazenados em memória e são reinicializados ao reiniciar o servidor.
 

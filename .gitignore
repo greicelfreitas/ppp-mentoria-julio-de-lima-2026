@@ -153,7 +153,4 @@ npm-debug.log*
 # Uploads temporários e cobertura de testes
 uploads/
 coverage/
-
-# Evidências locais do Cypress
-cypress/screenshots/
-cypress/videos/
+reports/*.xml

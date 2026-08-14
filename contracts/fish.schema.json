@@ -5,13 +5,13 @@
   "additionalProperties": false,
   "required": ["commonName", "scientificName", "regions"],
   "properties": {
-    "commonName": { "type": "string", "minLength": 1, "maxLength": 120 },
-    "scientificName": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "commonName": { "type": "string", "minLength": 1, "maxLength": 120, "pattern": "\\S" },
+    "scientificName": { "type": "string", "minLength": 3, "maxLength": 160, "pattern": "^[A-Z][a-z]+\\s[a-z]+(?:\\s[a-z]+)?$" },
     "regions": {
       "type": "array",
       "minItems": 1,
-      "items": { "type": "string", "minLength": 1, "maxLength": 120 }
+      "items": { "type": "string", "minLength": 1, "maxLength": 120, "pattern": "\\S" }
     },
-    "description": { "type": "string", "maxLength": 500 }
+    "description": { "type": "string", "maxLength": 500, "pattern": "\\S" }
   }
 }

@@ -33,6 +33,7 @@ Os testes E2E exercitam o fluxo completo de uma espécie — cadastro, consulta,
 .
 ├── .github/workflows/  # integração contínua
 ├── docs/               # estratégia e registros de testes
+├── features/           # cenários de teste escritos em Gherkin
 ├── postman/            # coleção e ambiente Postman
 ├── resources/          # especificação Swagger/OpenAPI
 ├── src/
@@ -130,7 +131,7 @@ Para gerar a evidência JUnit:
 npm run test:report
 ```
 
-A estratégia e o registro das execuções estão documentados em [docs/TEST_STRATEGY.md](docs/TEST_STRATEGY.md) e [docs/TEST_EXECUTION.md](docs/TEST_EXECUTION.md). A pipeline executa `npm test` em pushes e pull requests para a branch `master`.
+A estratégia, os casos em Gherkin e o registro das execuções estão disponíveis em [docs/TEST_STRATEGY.md](docs/TEST_STRATEGY.md), [features](features) e [docs/TEST_EXECUTION.md](docs/TEST_EXECUTION.md). A pipeline executa `npm test` em pushes e pull requests para a branch `master`.
 
 ---
 

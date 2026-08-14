@@ -16,6 +16,8 @@ São cobertos os serviços, endpoints REST, operações GraphQL, validação do 
 * GraphQL: validam queries e mutation pelo endpoint HTTP.
 * E2E: validam o fluxo de cadastro, consulta, identificação e erros.
 
+Os cenários são descritos em Gherkin, em português, nos arquivos da pasta `features`. Cada cenário utiliza `Dado`, `Quando` e `Então` e mantém os identificadores dos testes automatizados quando existentes. A automação correspondente continua na pasta `test`.
+
 ## Ferramentas
 
 São utilizados Node Test Runner, `fetch`, Ajv, JSON Schema, Swagger/OpenAPI, Postman e GitHub Actions.
